@@ -1,0 +1,35 @@
+[% INCLUDE 'doc-head-open.inc' %]
+ <title>Koha: Records by Biblionumber: List of Titles</title>
+ <script type="text/javascript" src="[% PLUGIN_PATH %]/datepicker/js/datepicker.js"></script>
+ <link href="[% PLUGIN_PATH %]/datepicker/css/datepicker.css" rel="stylesheet" type="text/css" />
+[% INCLUDE 'doc-head-close.inc' %]
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Records by Biblionumber &rsaquo; Records</div>
+
+<div id="doc3">
+
+<table border=1>
+  <thead>
+    <tr> 
+      <th>Biblionumber</th>
+      <th>Callnumber</th>
+      <th>Title</th>  
+    </tr>
+  </thead>
+
+  <tbody>
+    [% FOREACH i IN items %]
+      <tr>
+        <td>[% i.biblio.biblionumber %]</td>
+        <td>[% i.callnumber %]</td>
+        <td><a href="/cgi-bin/koha/catalogue/detail.pl?biblionumber=[% i.biblio.biblionumber %]">[% i.biblio.title %]</a></td> 
+      </tr>
+    [% END %]
+  </tbody>
+</table> 
+
+[% INCLUDE 'intranet-bottom.inc' %]

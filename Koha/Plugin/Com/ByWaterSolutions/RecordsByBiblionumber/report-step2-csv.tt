@@ -1,0 +1,3 @@
+biblionumber, callnumber, title
+[% FOREACH i IN items %]"[% i.biblio.biblionumber %]","[% i.callnumber | replace('"', '\"') %]","[% i.biblio.title | replace('"', '\"') %]"
+[% END %]

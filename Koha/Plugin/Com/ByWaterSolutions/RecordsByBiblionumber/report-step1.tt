@@ -1,0 +1,38 @@
+[% INCLUDE 'doc-head-open.inc' %]
+ <title>Koha: Plugins: Report: Records by Biblionumbers</title>
+ <script type="text/javascript" src="[% PLUGIN_PATH %]/datepicker/js/datepicker.js"></script>
+ <link href="[% PLUGIN_PATH %]/datepicker/css/datepicker.css" rel="stylesheet" type="text/css" />
+[% INCLUDE 'doc-head-close.inc' %]
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Records by Biblionumber &rsaquo; Enter biblionumbers</div>
+
+<div id="doc3">
+	<h3>Generate list of titles</h3>
+
+        <!-- Notice our form here has no 'action', this is good, it means that our forms will always get passed back to 'plugins/run.pl'. You could hard code it instead if you prefer -->
+	<form method="get">
+                <input type="hidden" name="class" value="[% CLASS %]"/>
+                <input type="hidden" name="method" value="[% METHOD %]"/>
+
+		<label for="biblionumbers">Biblionumbers:</label>
+        <textarea name="biblionumbers" id="biblionumbers" rows="25" cols="75"></textarea>
+        <span class="hint">Enter biblionumbers separated by commas, tabs, or newlines</span>
+		<br/><br/>
+
+		<label for="output">Output Data to:</label>
+		<select name="output">
+			<option value="screen">Screen</option>
+			<option value="csv">CSV File</option>
+		</select>
+
+		<br/><br/>
+
+		<input type="submit" value="Run Report" />
+
+	</form>
+
+[% INCLUDE 'intranet-bottom.inc' %]
