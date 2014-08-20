@@ -89,7 +89,6 @@ sub report_step2 {
 
     my @biblionumbers = split( /[\n,\r\n,\t,\,]/, $biblionumbers );
     map { $_ =~ s/^\s+|\s+$//g  } @biblionumbers;
-    warn "BIBLIONUMBERS: " . Data::Dumper::Dumper(@biblionumbers);
 
     my $schema = Koha::Database->new()->schema();
     my @items = $schema->resultset("Item")->search(
