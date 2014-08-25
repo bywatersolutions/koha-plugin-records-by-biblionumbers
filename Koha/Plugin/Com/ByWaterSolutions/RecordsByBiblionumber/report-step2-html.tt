@@ -16,6 +16,14 @@
       <th>Biblionumber</th>
       <th>Callnumber</th>
       <th>Title</th>  
+      <th>Author</th>
+      <th>Permanent location</th>
+      <th>Current location</th>
+      <th>ISBN</th>
+      <th>ISSN</th>
+      <th>Enumeration/Chronology</th>
+      <th>Publisher</th>
+      <th>Publication year</th>
     </tr>
   </thead>
 
@@ -25,6 +33,14 @@
         <td>[% i.biblio.biblionumber %]</td>
         <td>[% i.itemcallnumber %]</td>
         <td><a href="/cgi-bin/koha/catalogue/detail.pl?biblionumber=[% i.biblio.biblionumber %]">[% i.biblio.title %]</a></td> 
+        <td>[% i.biblio.author %]</td>
+        <td>[% i.homebranch.branchname %]</td>
+        <td>[% i.holdingbranch.branchname %]</td>
+        <td>[% i.biblioitem.isbn %]</td>
+        <td>[% i.biblioitem.issn %]</td>
+        <td>[% i.enumchron %]</td>
+        <td>[% i.biblioitem.publishercode %]</td>
+        <td>[% i.biblioitem.publicationyear %]</td>
       </tr>
     [% END %]
   </tbody>
