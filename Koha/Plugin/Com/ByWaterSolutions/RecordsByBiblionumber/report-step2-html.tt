@@ -10,7 +10,7 @@
 
 <div id="doc3">
 
-<table border=1>
+<table class="table table-striped">
   <thead>
     <tr> 
       <th>Biblionumber</th>
