@@ -1,7 +1,5 @@
 [% INCLUDE 'doc-head-open.inc' %]
  <title>Koha: Plugins: Report: Records by Biblionumbers</title>
- <script type="text/javascript" src="[% PLUGIN_PATH %]/datepicker/js/datepicker.js"></script>
- <link href="[% PLUGIN_PATH %]/datepicker/css/datepicker.css" rel="stylesheet" type="text/css" />
 [% INCLUDE 'doc-head-close.inc' %]
 </head>
 <body>
@@ -11,28 +9,38 @@
 <div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Records by Biblionumber &rsaquo; Enter biblionumbers</div>
 
 <div id="doc3">
-	<h3>Generate list of titles</h3>
-
         <!-- Notice our form here has no 'action', this is good, it means that our forms will always get passed back to 'plugins/run.pl'. You could hard code it instead if you prefer -->
 	<form method="get">
-                <input type="hidden" name="class" value="[% CLASS %]"/>
-                <input type="hidden" name="method" value="[% METHOD %]"/>
 
-		<label for="biblionumbers">Biblionumbers:</label>
-        <textarea name="biblionumbers" id="biblionumbers" rows="25" cols="75"></textarea>
-        <span class="hint">Enter biblionumbers separated by commas, tabs, or newlines</span>
-		<br/><br/>
+       <fieldset>
+          <legend>Generate list of titles</legend>
 
-		<label for="output">Output Data to:</label>
-		<select name="output">
-			<option value="screen">Screen</option>
-			<option value="csv">CSV File</option>
-		</select>
+           <input type="hidden" name="class" value="[% CLASS %]"/>
+           <input type="hidden" name="method" value="[% METHOD %]"/>
+           <div class="control-group">
+              <label class="control-lanel" for="biblionumbers">Bibilonumbers:</label>
+              <div class="controls">
+                    <textarea name="biblionumbers" id="biblionumbers" rows="10" class="input-block-level"></textarea>
+                    <span class="hint help-block">Enter biblionumbers separated by commas, tabs, or newlines</span>
+               </div>
+           </div>
 
-		<br/><br/>
-
-		<input type="submit" value="Run Report" />
-
-	</form>
+           <div class="control-group">
+              <label class="control-label" for="output">Output Data to:</label>
+              <div class="controls">
+                 <select name="output">
+                    <option value="screen">Screen</option>
+                    <option value="csv">CSV File</option>
+                 </select>
+              </div>
+           </div>
+          
+           <div class="control-group">
+              <div class="controls">
+                 <button type="submit" class="btn" value="Run Report">Run Report</button>
+              </div>
+           </div>
+        </fieldset>
+     </form>
 
 [% INCLUDE 'intranet-bottom.inc' %]
