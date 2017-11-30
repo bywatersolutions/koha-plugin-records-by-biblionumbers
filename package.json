@@ -1,7 +1,8 @@
 {
-  "name": "koha-plugin-kitchen-sink",
-  "version": "2.1.1",
-  "description": "Koha Kitchen Sink Plugin",
+  "name": "koha-plugin-records-by-biblionumbers",
+  "version": "1.0.0",
+  "previous_version": "1.0.0",
+  "description": "Koha Records by Biblionumbers Plugin",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.2",
@@ -13,16 +14,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bywatersolutions/koha-plugin-kitchen-sink.git"
+    "url": "git+https://github.com/bywatersolutions/koha-plugin-records-by-biblionumbers.git"
   },
   "author": "Kyle M Hall <kyle@bywatersolutions.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/bywatersolutions/koha-plugin-kitchen-sink/issues"
+    "url": "https://github.com/bywatersolutions/koha-plugin-records-by-biblionumbers/issues"
   },
-  "homepage": "https://github.com/bywatersolutions/koha-plugin-kitchen-sink#readme",
+  "homepage": "https://github.com/bywatersolutions/koha-plugin-records-by-biblionumbers#readme",
   "dependencies": {
     "datetime": "0.0.3",
+    "gulp-replace": "^0.6.1",
+    "jsonfile": "^4.0.0",
     "node-datetime": "^2.0.0"
   }
 }
