@@ -1,6 +1,6 @@
 {
   "name": "koha-plugin-records-by-biblionumbers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "previous_version": "1.0.0",
   "description": "Koha Records by Biblionumbers Plugin",
   "devDependencies": {
