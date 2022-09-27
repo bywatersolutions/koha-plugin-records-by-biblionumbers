@@ -8,12 +8,12 @@ use base qw(Koha::Plugins::Base);
 
 ## We will also need to include any Koha libraries we want to access
 use C4::Context;
-use C4::Members;
 use C4::Auth;
 use Koha::Database;
 
 ## Here we set our plugin version
 our $VERSION = "{VERSION}";
+our $MINIMUM_VERSION = "{MINIMUM_VERSION}";
 
 ## Here is our metadata, some keys are required, some are optional
 our $metadata = {
@@ -21,8 +21,8 @@ our $metadata = {
     author          => 'Kyle M Hall',
     description     => 'Enter a list of biblionumbers, get a list of titles!',
     date_authored   => '2014-08-20',
-    date_updated    => '2014-08-20',
-    minimum_version => '3.0100107',
+    date_updated    => "1900-01-01",
+    minimum_version => $MINIMUM_VERSION,
     maximum_version => undef,
     version         => $VERSION,
 };
@@ -69,11 +69,6 @@ sub report_step1 {
     my $cgi = $self->{'cgi'};
 
     my $template = $self->get_template( { file => 'report-step1.tt' } );
-
-    $template->param(
-        branches_loop   => GetBranchesLoop(),
-        categories_loop => GetBorrowercategoryList(),
-    );
 
     print $cgi->header();
     print $template->output();

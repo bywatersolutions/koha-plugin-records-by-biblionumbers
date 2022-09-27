@@ -35,6 +35,8 @@
               </div>
            </div>
           
+           <br/>
+
            <div class="control-group">
               <div class="controls">
                  <button type="submit" class="btn" value="Run Report">Run Report</button>
