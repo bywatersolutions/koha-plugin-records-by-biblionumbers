@@ -17,6 +17,17 @@
 
            <input type="hidden" name="class" value="[% CLASS %]"/>
            <input type="hidden" name="method" value="[% METHOD %]"/>
+
+           <div class="control-group">
+              <label class="control-label" for="input">Input data are:</label>
+              <div class="controls">
+                 <select name="input">
+                    <option value="biblionumber">Biblionumbers</option>
+                    <option value="barcode">Barcodes</option>
+                 </select>
+              </div>
+           </div>
+
            <div class="control-group">
               <label class="control-lanel" for="biblionumbers">Bibilonumbers:</label>
               <div class="controls">

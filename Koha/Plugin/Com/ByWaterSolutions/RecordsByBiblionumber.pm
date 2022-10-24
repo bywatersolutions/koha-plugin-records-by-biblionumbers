@@ -19,7 +19,7 @@ our $MINIMUM_VERSION = "{MINIMUM_VERSION}";
 our $metadata = {
     name            => 'Records by Biblionumbers',
     author          => 'Kyle M Hall',
-    description     => 'Enter a list of biblionumbers, get a list of titles!',
+    description     => 'Enter a list of biblionumbers ( or barcodes ), get a list of titles!',
     date_authored   => '2014-08-20',
     date_updated    => "1900-01-01",
     minimum_version => $MINIMUM_VERSION,
@@ -79,15 +79,17 @@ sub report_step2 {
     my $cgi = $self->{'cgi'};
 
     my $biblionumbers = $cgi->param('biblionumbers');
+    my $input         = $cgi->param('input') || "biblionumber";
     my $output        = $cgi->param('output');
 
-    my @biblionumbers = split( /[\n,\r\n,\t,\,]/, $biblionumbers );
-    map { $_ =~ s/^\s+|\s+$//g  } @biblionumbers;
+    my @numbers = split( /[\n,\r\n,\t,\,]/, $biblionumbers );
+    map { $_ =~ s/^\s+|\s+$//g  } @numbers;
 
     my $schema = Koha::Database->new()->schema();
+
     my @items = $schema->resultset("Item")->search(
-        { biblionumber => { -in  => \@biblionumbers } },
-        { order_by     => { -asc => 'biblionumber' } }
+        { $input   => { -in  => \@numbers } },
+        { order_by => { -asc => 'biblionumber' } }
     );
 
     my $filename;
