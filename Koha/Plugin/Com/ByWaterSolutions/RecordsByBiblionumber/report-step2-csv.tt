@@ -1,10 +1,9 @@
-[%- USE EncodeUTF8 -%]
 [%- FILTER csv = replace('"', '\"') %][% END -%]
 biblionumber, callnumber, title, author, permanent location, current location, isbn, issn, enumeration/chronology, publisher, publication year
 [% FOREACH i IN items %]
 [%- '"' %][% i.biblio.biblionumber | csv %][% '",' -%]
 [%- '"' %][% i.itemcallnumber | csv %][% '",' -%]
-[%- '"' %][% i.biblio.title | csv | $EncodeUTF8 %][% '",' -%]
+[%- '"' %][% i.biblio.title | csv %][% '",' -%]
 [%- '"' %][% i.biblio.author %][% '",' -%]
 [%- '"' %][% i.location %][% '",' -%]
 [%- '"' %][% i.biblioitem.isbn %][% '",' -%]
