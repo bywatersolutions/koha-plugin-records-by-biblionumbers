@@ -13,4 +13,5 @@ biblionumber,callnumber,title,author,permanent location,current location,isbn,is
 [%- '"' %][% i.biblioitem.publicationyear %][% '",' -%]
 [%- '"' %][% i.barcode | csv %][% '",' -%]
 [%- '"' %][% IF i.withdrawn %]Withdrawn[% ELSIF i.lost %]Missing[% ELSIF i.onloan %]Checked out[% ELSE %]Available[% END %][% '",' -%]
+
 [% END %]
