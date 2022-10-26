@@ -1,5 +1,5 @@
 [%- FILTER csv = replace('"', '\"') %][% END -%]
-biblionumber, callnumber, title, author, permanent location, current location, isbn, issn, enumeration/chronology, publisher, publication year
+biblionumber,callnumber,title,author,permanent location,current location,isbn,issn,enumeration/chronology,publisher,publication year,barcode
 [% FOREACH i IN items %]
 [%- '"' %][% i.biblio.biblionumber | csv %][% '",' -%]
 [%- '"' %][% i.itemcallnumber | csv %][% '",' -%]
@@ -11,5 +11,6 @@ biblionumber, callnumber, title, author, permanent location, current location, i
 [%- '"' %][% i.enumchron %][% '",' -%]
 [%- '"' %][% i.biblioitem.publishercode %][% '",' -%]
 [%- '"' %][% i.biblioitem.publicationyear %][% '",' -%]
+[%- '"' %][% i.barcode | csv %][% '",' -%]
 
 [% END %]

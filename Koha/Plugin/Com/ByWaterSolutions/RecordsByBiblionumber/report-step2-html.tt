@@ -23,6 +23,7 @@
       <th>Enumeration/Chronology</th>
       <th>Publisher</th>
       <th>Publication year</th>
+      <th>Barcode</th>
     </tr>
   </thead>
 
@@ -39,6 +40,7 @@
         <td>[% i.enumchron %]</td>
         <td>[% i.biblioitem.publishercode %]</td>
         <td>[% i.biblioitem.publicationyear %]</td>
+        <td>[% i.barcode %]</td>
       </tr>
     [% END %]
   </tbody>
