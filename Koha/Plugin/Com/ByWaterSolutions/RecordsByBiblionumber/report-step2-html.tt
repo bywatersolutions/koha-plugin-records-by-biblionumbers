@@ -24,6 +24,7 @@
       <th>Publisher</th>
       <th>Publication year</th>
       <th>Barcode</th>
+      <th>Status</th>
     </tr>
   </thead>
 
@@ -41,6 +42,7 @@
         <td>[% i.biblioitem.publishercode %]</td>
         <td>[% i.biblioitem.publicationyear %]</td>
         <td>[% i.barcode %]</td>
+        <td>[% IF i.withdrawn %]Withdrawn[% ELSIF i.lost %]Missing[% ELSIF i.onloan %]Checked out[% ELSE %]Available[% END %]</td>
       </tr>
     [% END %]
   </tbody>
